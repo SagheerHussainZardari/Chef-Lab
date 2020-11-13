@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:tint="@color/colorPrimaryDark"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:src="@drawable/ic_food" />
+
+
+            <EditText
+                android:id="@+id/et_NameSignUp"
+                style="@style/edittextstyle"
+                android:drawableStart="@drawable/ic_person"
+                android:hint="Name" />
+
+            <EditText
+                android:id="@+id/et_EmailSignUp"
+                style="@style/edittextstyle"
+                android:drawableStart="@drawable/ic_email"
+                android:hint="Email" />
+
+            <EditText
+                android:id="@+id/et_PhoneSignUp"
+                android:hint="Phone"
+                style="@style/edittextstyle"
+                android:drawableStart="@drawable/ic_phone" />
+
+            <EditText
+                android:id="@+id/et_CitySignUp"
+                style="@style/edittextstyle"
+                android:drawableStart="@drawable/ic_address"
+                android:hint="City" />
+
+            <EditText
+                android:id="@+id/et_AddressSignUp"
+                style="@style/edittextstyle"
+                android:drawableStart="@drawable/ic_address"
+                android:hint="Address" />
+
+            <EditText
+                android:id="@+id/et_PasswordSignUp"
+                android:hint="Password"
+                style="@style/edittextstyle"
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/ic_password" />
+
+            <EditText
+                android:id="@+id/et_PasswordConfirmSignUp"
+                style="@style/edittextstyle"
+                android:drawableStart="@drawable/ic_password"
+                android:inputType="textPassword"
+                android:hint="Password Confirm" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSignUpSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="64dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:text="SignUp"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

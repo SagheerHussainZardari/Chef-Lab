@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.sagheerhussainzardari.cheflab.Fragments.HomeFragment"
+        android:label="Select Ingredients You Have?"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_sellbook"
+        android:name="com.sagheerhussainzardari.cheflab.Fragments.BookForSellFragment"
+        android:label="Sell A Book"
+        tools:layout="@layout/fragment_sellbook" />
+
+    <fragment
+        android:id="@+id/nav_editprofile"
+        android:name="com.sagheerhussainzardari.cheflab.Fragments.EditProfileFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_editprofile" />
+
+
+    <fragment
+        android:id="@+id/nav_contactus"
+        android:name="com.sagheerhussainzardari.cheflab.Fragments.ContactUsFragment"
+        android:label="Contact Us"
+        tools:layout="@layout/fragment_contact_us" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.sagheerhussainzardari.cheflab.Fragments.LogoutFragment"
+        android:label=""
+        tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/nav_mybooksforseller"
+        android:name="com.sagheerhussainzardari.cheflab.Fragments.MyBooksForSellFragment"
+        android:label="My Books For Sell"
+        tools:layout="@layout/fragment_mybooksforsell" />
+
+</navigation>

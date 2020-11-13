@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginRight="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:autoSizeTextType="uniform"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"
+                    android:paddingLeft="8dp"
+                    android:text="Edit Book Details"
+                    android:textColor="@color/colorPrimary" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivBookImage_EditBook"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/ic_camera" />
+
+                <TextView
+                    android:id="@+id/btn_ChoosePicture_EditBook"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/borderlayout"
+                    android:drawableStart="@drawable/ic_camera"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="16dp"
+                    android:text="Choose Book Picture"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/et_BookName_EditBook"
+                    style="@style/edittextstyle"
+                    android:drawableStart="@drawable/ic_book"
+                    android:hint="Book Name" />
+
+                <EditText
+                    android:id="@+id/et_BookAuthor_EditBook"
+                    style="@style/edittextstyle"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawableTint="@color/colorPrimary"
+                    android:hint="Book Author" />
+
+                <EditText
+                    android:id="@+id/et_BookPhone_EditBook"
+                    style="@style/edittextstyle"
+                    android:drawableStart="@drawable/ic_phone"
+                    android:drawableTint="@color/colorPrimary"
+                    android:hint="Phone Number" />
+
+                <EditText
+                    android:id="@+id/et_BookCity_EditBook"
+                    style="@style/edittextstyle"
+                    android:drawableStart="@drawable/ic_address"
+                    android:drawableTint="@color/colorPrimary"
+                    android:hint="City" />
+
+
+                <EditText
+                    android:id="@+id/et_BookPrice_EditBook"
+                    style="@style/edittextstyle"
+                    android:drawableStart="@drawable/ic_sellbook"
+                    android:hint="Book Price" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_EditBook"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginRight="64dp"
+                    android:text="Update Book" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

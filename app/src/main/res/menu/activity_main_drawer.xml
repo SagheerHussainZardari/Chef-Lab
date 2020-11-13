@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+
+<!--        <item-->
+<!--            android:id="@+id/nav_sellbook"-->
+<!--            android:icon="@drawable/ic_sellbook"-->
+<!--            android:title="Sell A Book" />-->
+
+<!--        <item-->
+<!--            android:id="@+id/nav_mybooksforseller"-->
+<!--            android:icon="@drawable/ic_sellbook"-->
+<!--            android:title="My Books For Sell" />-->
+
+        <item
+            android:id="@+id/nav_editprofile"
+            android:icon="@drawable/ic_editprofile"
+            android:title="Edit Profile" />
+
+    </group>
+
+    <item android:title="Others">
+
+        <menu>
+            <item
+                android:id="@+id/nav_contactus"
+                android:icon="@drawable/ic_contactus"
+                android:title="Contact Us" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Logout" />
+
+        </menu>
+
+
+    </item>
+</menu>

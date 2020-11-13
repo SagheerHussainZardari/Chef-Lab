@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.BookForSellFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="16dp"
+            android:autoSizeTextType="uniform"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:text="Enter Book Details"
+            android:textColor="@color/colorPrimary" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivBookImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_camera"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/btn_ChoosePicture"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/borderlayout"
+            android:drawableStart="@drawable/ic_camera"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="8dp"
+            android:paddingRight="16dp"
+            android:text="Choose Book Picture"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_BookName_SellBook"
+            style="@style/edittextstyle"
+            android:drawableStart="@drawable/ic_book"
+            android:hint="Book Name" />
+
+        <EditText
+            android:id="@+id/et_BookAuthor_SellBook"
+            style="@style/edittextstyle"
+            android:drawableStart="@drawable/ic_person"
+            android:drawableTint="@color/colorPrimary"
+            android:hint="Book Author" />
+
+
+        <EditText
+            android:id="@+id/et_BookPrice_SellBook"
+            style="@style/edittextstyle"
+            android:drawableStart="@drawable/ic_sellbook"
+            android:hint="Book Price" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_SellBook"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="64dp"
+            android:text="Sell Book" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/progressBarLayoutSellBook"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.7"
+            android:background="#000" />
+
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pb"
+            android:layout_centerInParent="true"
+            android:text="Uploading Book..."
+            android:textColor="#fff" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

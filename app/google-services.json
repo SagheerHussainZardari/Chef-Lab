@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "225861194402",
+    "firebase_url": "https://cheflab-8f7ab.firebaseio.com",
+    "project_id": "cheflab-8f7ab",
+    "storage_bucket": "cheflab-8f7ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225861194402:android:48437055f75e10b9ebbdfb",
+        "android_client_info": {
+          "package_name": "com.sagheerhussainzardari.cheflab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "225861194402-aviofs59bh9r6o205d0ljlim5om8uud9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx6e2EgpAwERuUkhYfbC1hUhMXVl1Ia2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "225861194402-aviofs59bh9r6o205d0ljlim5om8uud9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

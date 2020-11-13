@@ -18,16 +18,15 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center"
-        android:scaleX="1"
-        android:scaleY="1">
+        android:scaleX="0"
+        android:scaleY="0">
 
         <ImageView
             android:id="@+id/iv_logosplash"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:tint="@color/colorPrimaryDark"
-            android:src="@drawable/ic_food"
-             />
+            android:src="@drawable/ic_food" />
 
         <TextView
             android:layout_width="wrap_content"

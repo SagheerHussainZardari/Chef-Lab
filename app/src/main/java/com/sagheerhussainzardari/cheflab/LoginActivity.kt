@@ -101,8 +101,8 @@ class LoginActivity : AppCompatActivity() {
         this.finishAffinity()
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
 
         if (isInternetAvaiable()) {
             internet_connection_layout.visibility = View.GONE
@@ -123,7 +123,6 @@ class LoginActivity : AppCompatActivity() {
             internet_connection_layout.visibility = View.VISIBLE
         }
     }
-
     private fun onRetryButtonClicked() {
         onResume()
     }

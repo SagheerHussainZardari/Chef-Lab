@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "299386332741",
+    "firebase_url": "https://online-second-hand-bookstore.firebaseio.com",
+    "project_id": "online-second-hand-bookstore",
+    "storage_bucket": "online-second-hand-bookstore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299386332741:android:ff772f3da81b47972ea52c",
+        "android_client_info": {
+          "package_name": "com.sagheerhussainzardari.onlinesecondhandbookstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299386332741-86k5uks9qmqupqo5m6ik8tr4q3ra0ajj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sagheerhussainzardari.onlinesecondhandbookstore",
+            "certificate_hash": "1f9eb888cc780587002ea1a9c5a48fa78869b9ef"
+          }
+        },
+        {
+          "client_id": "299386332741-a95ef08gk5cr5k0k8i1dmbbujl939q3g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0Bz97NsNG9eHDz5xTttAe48UmwkIJh9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299386332741-a95ef08gk5cr5k0k8i1dmbbujl939q3g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.sagheerhussainzardari.cheflab.Fragments.MatchingDishesFragment
 import com.sagheerhussainzardari.cheflab.Models.DishesModel
 import com.sagheerhussainzardari.cheflab.R
 import kotlinx.android.synthetic.main.recycler_layout_matched_dishes_list.view.*
+
 
 class DishesAdapter(
     var context: Context,
@@ -31,8 +33,22 @@ class DishesAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.view.dish_card.setOnClickListener {
+
+            booksForSellFragment.onCardClik(dishesList[position].dishVideo)
+
+        }
+
         holder.view.tv_dish_name.text = dishesList[position].dishName
+        holder.view.tv_ingredents.text = "Ingredents: " + dishesList[position].dishIngredents
+        holder.view.tv_duration.text = "Duration: " + dishesList[position].dishDuration
+        holder.view.tv_cookingMethod.text =
+            "Cooking Method: " + dishesList[position].dishCookingMethod
+
+        Glide.with(context).load(dishesList[position].dishImgUrl).into(holder.view.iv_dishImage)
     }
 
 
 }
+
+

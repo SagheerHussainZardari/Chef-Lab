@@ -1,5 +1,8 @@
 package com.sagheerhussainzardari.cheflab.Fragments
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +21,8 @@ import kotlinx.android.synthetic.main.fragment_matched_dishes.*
 class MatchingDishesFragment : Fragment() {
 
     companion object {
+
+
         var db = FirebaseDatabase.getInstance().reference
         var dishesList = ArrayList<DishesModel>()
 
@@ -63,7 +68,16 @@ class MatchingDishesFragment : Fragment() {
                         }
                     }
                     if (doFilter) {
-                        dishesList.add(DishesModel(dishName))
+                        dishesList.add(
+                            DishesModel(
+                                dishName,
+                                document.child("dish_img").value.toString(),
+                                newListTrimed.toString(),
+                                document.child("cooking_method").value.toString(),
+                                document.child("duration").value.toString(),
+                                document.child("dish_video").value.toString()
+                            )
+                        )
                     }
 
 
@@ -95,6 +109,20 @@ class MatchingDishesFragment : Fragment() {
                 setUpRecyclerView(dishesList)
             }
         })
+    }
+
+
+    fun onCardClik(dishVideo: String) {
+        if (dishVideo != "" && dishVideo != "null") {
+            val intentBrowser = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.youtube.com/watch?v=pn9mO1Qo-xI&ab_channel=freekerzz")
+            )
+            try {
+                context?.startActivity(intentBrowser)
+            } catch (ex: ActivityNotFoundException) {
+            }
+        }
     }
 
     private fun setUpRecyclerView(dishesList: ArrayList<DishesModel>) {

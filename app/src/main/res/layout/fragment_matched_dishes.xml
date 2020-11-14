@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/progressbar"
             android:layout_centerInParent="true"
-            android:text="Deleting..."
+            android:text="Searching For Dishes..."
             android:textColor="#fff" />
 
     </RelativeLayout>

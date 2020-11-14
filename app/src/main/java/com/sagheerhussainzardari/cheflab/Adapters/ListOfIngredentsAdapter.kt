@@ -34,6 +34,7 @@ class ListOfIngredentsAdapter(
 //
         holder.view.checkbox.setOnClickListener {
             homeFragment.onItemChecked(listOfIngredents[position].ingredentName)
+
         }
 //        if (booksList[position].bookRatings == "0.0") {
 //            holder.view.tv_BookRatings.visibility = View.GONE

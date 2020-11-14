@@ -88,4 +88,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun onCardClick(id: String) {
+        this.toastshort(id)
+    }
+
 }

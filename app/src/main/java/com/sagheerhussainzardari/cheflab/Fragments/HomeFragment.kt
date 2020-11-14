@@ -70,12 +70,16 @@ class HomeFragment : Fragment() {
 
     }
 
+    fun onCardClik(dishVideo: String) {
+        context?.toastshort("card clicked")
+    }
+
     private fun setCategoriesSpinner() {
         categoriesList.clear()
         categoriesList.add(" All Categories")
 
 
-        db.child("AllCategories").addListenerForSingleValueEvent(object : ValueEventListener{
+        db.child("AllCategories").addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {}
 
             override fun onDataChange(p0: DataSnapshot) {

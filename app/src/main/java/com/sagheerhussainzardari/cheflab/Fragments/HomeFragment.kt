@@ -42,6 +42,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        progressBarLayoutHomeFragment.visibility = View.VISIBLE
 
         (activity as MainActivity).setUsersDetails()
 
@@ -77,7 +78,9 @@ class HomeFragment : Fragment() {
                         position: Int,
                         id: Long
                     ) {
-                        if(categoriesList[position] == " All Categories") {
+                        progressBarLayoutHomeFragment.visibility = View.VISIBLE
+
+                        if (categoriesList[position] == " All Categories") {
                             Toast.makeText(
                                 context,
                                 "Getting Data For All Categories",
@@ -97,7 +100,6 @@ class HomeFragment : Fragment() {
                                             }
                                         }
                                         setUpRecyclerView(listOfIngredents)
-
                                     }
                                 })
 
@@ -131,6 +133,9 @@ class HomeFragment : Fragment() {
         recyclerview_list_of_sub_cats.layoutManager = GridLayoutManager(context, 1)
         recyclerview_list_of_sub_cats.adapter =
             ListOfIngredentsAdapter(requireContext(), listOfIngredents, this)
+
+        progressBarLayoutHomeFragment.visibility = View.GONE
+
     }
 
 }

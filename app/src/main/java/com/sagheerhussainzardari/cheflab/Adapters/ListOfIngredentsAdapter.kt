@@ -39,6 +39,9 @@ class ListOfIngredentsAdapter(
 //            holder.view.tv_BookRatings.visibility = View.GONE
 //        }
 
+        if (HomeFragment.currentIngredents.contains(listOfIngredents[position].ingredentName)) {
+            holder.view.checkbox.isChecked = true
+        }
         holder.view.tv_ingredentName.text = listOfIngredents[position].ingredentName
     }
 }

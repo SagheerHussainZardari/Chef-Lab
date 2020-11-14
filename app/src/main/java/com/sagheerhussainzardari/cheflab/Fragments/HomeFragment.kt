@@ -16,7 +16,6 @@ import com.sagheerhussainzardari.cheflab.Adapters.ListOfIngredentsAdapter
 import com.sagheerhussainzardari.cheflab.MainActivity
 import com.sagheerhussainzardari.cheflab.Models.IngredentsModel
 import com.sagheerhussainzardari.cheflab.R
-import com.sagheerhussainzardari.cheflab.toastshort
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -40,7 +39,12 @@ class HomeFragment : Fragment() {
     }
 
     fun onItemChecked(ingredent: String) {
-        context?.toastshort("checked $ingredent")
+        if (currentIngredents.contains(ingredent)) {
+            currentIngredents.remove(ingredent)
+        } else {
+            currentIngredents.add(ingredent)
+        }
+        tv_ingredentsSelected.text = currentIngredents.size.toString()
 
     }
 

@@ -40,11 +40,20 @@ class DishesAdapter(
         }
 
         holder.view.tv_dish_name.text = dishesList[position].dishName
-        holder.view.tv_ingredents.text = "Ingredents: " + dishesList[position].dishIngredents
+        holder.view.tv_ingredents.text = "Ingredents: " + (dishesList[position].dishIngredents)
+
+
         holder.view.tv_duration.text = "Duration: " + dishesList[position].dishDuration
+        holder.view.tv_ingredentsRemaining.text =
+            "Remaing Ingredients: " + dishesList[position].dishRemaingIngredents
         holder.view.tv_cookingMethod.text =
             "Cooking Method: " + dishesList[position].dishCookingMethod
 
+        if (dishesList[position].dishVideo != "" && dishesList[position].dishVideo != "null") {
+            holder.view.iv_videoLogo.visibility = View.VISIBLE
+        } else {
+            holder.view.iv_videoLogo.visibility = View.GONE
+        }
         Glide.with(context).load(dishesList[position].dishImgUrl).into(holder.view.iv_dishImage)
     }
 

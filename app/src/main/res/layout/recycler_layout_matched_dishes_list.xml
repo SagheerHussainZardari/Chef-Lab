@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:elevation="16dp"
-        app:cardBackgroundColor="#0fff01"
+        app:cardBackgroundColor="#010101"
         app:cardCornerRadius="16dp"
 
         app:cardElevation="16dp">
@@ -23,6 +23,18 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_videoLogo"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/ic_play"
+                android:translationZ="90dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_dishImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_dish_name"
+                app:layout_constraintTop_toTopOf="@+id/iv_dishImage" />
 
             <ImageView
                 android:id="@+id/iv_dishImage"
@@ -57,6 +69,18 @@
 
                 app:layout_constraintTop_toBottomOf="@+id/tv_dish_name" />
 
+            <TextView
+                android:id="@+id/tv_ingredentsRemaining"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:padding="8dp"
+                android:text="Ingredents Remaing: "
+                android:textColor="#fff"
+                android:textSize="16sp"
+
+                app:layout_constraintTop_toBottomOf="@+id/tv_ingredents" />
+
 
             <TextView
                 android:id="@+id/tv_duration"
@@ -68,7 +92,7 @@
                 android:textColor="#fff"
 
                 android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_ingredents" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_ingredentsRemaining" />
 
             <TextView
                 android:id="@+id/tv_cookingMethod"

@@ -6,5 +6,6 @@ data class DishesModel(
     var dishIngredents: String,
     var dishCookingMethod: String,
     var dishDuration: String,
-    var dishVideo: String
+    var dishVideo: String,
+    var dishRemaingIngredents: String
 )

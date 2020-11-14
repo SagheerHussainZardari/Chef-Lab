@@ -67,6 +67,20 @@ class MatchingDishesFragment : Fragment() {
                             }
                         }
                     }
+                    var remaining_items = ArrayList<String>()
+                    for (item in newListTrimed) {
+//                        [sugar , milk , water , tea]
+                        var itemFound = false
+                        for (ingredent in HomeFragment.currentIngredents) {
+//                            [sugar]
+                            if (item == ingredent) {
+                                itemFound = true
+                            }
+                        }
+                        if (!itemFound) {
+                            remaining_items.add(item)
+                        }
+                    }
                     if (doFilter) {
                         dishesList.add(
                             DishesModel(
@@ -75,7 +89,8 @@ class MatchingDishesFragment : Fragment() {
                                 newListTrimed.toString(),
                                 document.child("cooking_method").value.toString(),
                                 document.child("duration").value.toString(),
-                                document.child("dish_video").value.toString()
+                                document.child("dish_video").value.toString(),
+                                remaining_items.toString()
                             )
                         )
                     }

@@ -26,8 +26,8 @@
 
             <ImageView
                 android:id="@+id/iv_videoLogo"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:src="@drawable/ic_play"
                 android:translationZ="90dp"
                 android:visibility="visible"

@@ -141,8 +141,8 @@ class HomeFragment : Fragment() {
     }
 
     override fun onResume() {
-        super.onResume()
 
+        super.onResume()
         tv_ingredentsSelected.text = currentIngredents.size.toString()
 
     }
@@ -154,7 +154,6 @@ class HomeFragment : Fragment() {
             ListOfIngredentsAdapter(requireContext(), listOfIngredents, this)
 
         progressBarLayoutHomeFragment.visibility = View.GONE
-
     }
 
 }

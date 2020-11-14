@@ -20,6 +20,7 @@ class MatchingDishesFragment : Fragment() {
     companion object {
         var db = FirebaseDatabase.getInstance().reference
         var dishesList = ArrayList<DishesModel>()
+
     }
 
     override fun onCreateView(
@@ -45,7 +46,25 @@ class MatchingDishesFragment : Fragment() {
             override fun onDataChange(p0: DataSnapshot) {
                 dishesList.clear()
                 for (document in p0.children) {
-                    dishesList.add(DishesModel("" + document.value.toString()))
+                    var dishName = document.key.toString()
+                    var newList = document.child("ingredents").value.toString().split(',')
+                    var newListTrimed = ArrayList<String>()
+                    for (item in newList) {
+                        newListTrimed.add(item.trim())
+                    }
+                    var doFilter = false
+                    for (item in newListTrimed) {
+                        for (ingredent in HomeFragment.currentIngredents) {
+                            if (item == ingredent) {
+                                doFilter = true
+                            }
+                        }
+                    }
+                    if (doFilter) {
+                        dishesList.add(DishesModel(dishName))
+                    }
+
+
                 }
 
                 setUpRecyclerView(dishesList)

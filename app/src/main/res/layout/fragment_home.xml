@@ -64,7 +64,7 @@
             android:visibility="visible" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_booksell"
+            android:id="@+id/recyclerview_list_of_sub_cats"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

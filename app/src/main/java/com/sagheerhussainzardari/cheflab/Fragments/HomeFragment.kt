@@ -1,7 +1,5 @@
 package com.sagheerhussainzardari.cheflab.Fragments
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,28 +7,27 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.bumptech.glide.Glide
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.sagheerhussainzardari.cheflab.Adapters.BookSellAdapter
+import com.sagheerhussainzardari.cheflab.Adapters.ListOfIngredentsAdapter
 import com.sagheerhussainzardari.cheflab.MainActivity
-import com.sagheerhussainzardari.cheflab.Models.BookSellModel
+import com.sagheerhussainzardari.cheflab.Models.IngredentsModel
 import com.sagheerhussainzardari.cheflab.R
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
     companion object {
-        var booksList = ArrayList<BookSellModel>()
-        var db = FirebaseDatabase.getInstance().getReference()
+        var booksList = ArrayList<IngredentsModel>()
+        var db = FirebaseDatabase.getInstance().reference
 
         var categoriesList = ArrayList<String>()
-        var booksListFiltered = ArrayList<BookSellModel>()
+        var listOfIngredents = ArrayList<IngredentsModel>()
+        var booksListFiltered = ArrayList<IngredentsModel>()
     }
 
     override fun onCreateView(
@@ -50,71 +47,9 @@ class HomeFragment : Fragment() {
 
         setCategoriesSpinner()
 
-//        autoComplete_Search.addTextChangedListener {
-//            if (it.toString() == "") {
-//                if (spinner_ByCities.selectedItem.toString() == " All Categories") {
-//                    setUpRecyclerView(booksList)
-//                } else {
-//                    setUpRecyclerView(booksListFiltered)
-//                }
-//            } else {
-//                val newListBySearchValue = ArrayList<BookSellModel>()
-//                if (spinner_ByCities.selectedItem.toString() == " All Categories") {
-//                    for (book in booksList) {
-//                        if (book.bookName.toLowerCase().contains(it.toString().toLowerCase()))
-//                            newListBySearchValue.add(book)
-//                    }
-//                    setUpRecyclerView(newListBySearchValue)
-//
-//                } else {
-//                    for (book in booksListFiltered) {
-//                        if (book.bookName.toLowerCase().contains(it.toString().toLowerCase()))
-//                            newListBySearchValue.add(book)
-//                    }
-//                    setUpRecyclerView(newListBySearchValue)
-//                }
-//
-//            }
-//        }
-
         progressBarLayoutHomeFragment.setOnClickListener { }
 
-//        if (booksList.isEmpty()) {
-//            getBooksList()
-//        } else {
-//            setCiteisSpinner()
-//            setUpRecyclerView(booksList)
-//        }
     }
-
-//    fun getBooksList() {
-//        progressBarLayoutHomeFragment.visibility = View.VISIBLE
-//        db.addListenerForSingleValueEvent(object : ValueEventListener {
-//            override fun onCancelled(p0: DatabaseError) {}
-//
-//            override fun onDataChange(p0: DataSnapshot) {
-//
-//                for (document in p0.children) {
-//                    booksList.add(
-//                        BookSellModel(
-//                            document.child("bookID").value.toString(),
-//                            document.child("bookName").value.toString(),
-//                            document.child("bookAuthor").value.toString(),
-//                            document.child("bookPrice").value.toString(),
-//                            document.child("bookSellerUID").value.toString(),
-//                            document.child("bookSellerName").value.toString(),
-//                            document.child("bookSellerPhone").value.toString(),
-//                            document.child("bookSellerCity").value.toString(),
-//                            document.child("bookRatings").value.toString(),
-//                            document.child("bookImageUrl").value.toString()
-//                        )
-//                    )
-//                }
-//                setCiteisSpinner()
-//                setUpRecyclerView(booksList)
-//            }
-//        })
-//    }
 
 
     private fun setCategoriesSpinner() {
@@ -127,7 +62,7 @@ class HomeFragment : Fragment() {
 
             override fun onDataChange(p0: DataSnapshot) {
                 for(document in p0.children){
-                    categoriesList.add(document.value.toString());
+                    categoriesList.add(document.value.toString())
                 }
 
                 spinner_ByCategories.adapter =
@@ -142,19 +77,42 @@ class HomeFragment : Fragment() {
                         position: Int,
                         id: Long
                     ) {
+                        if(categoriesList[position] == " All Categories") {
+                            Toast.makeText(
+                                context,
+                                "Getting Data For All Categories",
+                                Toast.LENGTH_SHORT
+                            ).show()
 
+                            db.child("SubCategories")
+                                .addListenerForSingleValueEvent(object : ValueEventListener {
+                                    override fun onCancelled(p0: DatabaseError) {}
 
-                        if(categoriesList[position] == " All Categories"){
+                                    override fun onDataChange(p0: DataSnapshot) {
 
-                            Toast.makeText(context, "Getting Data For All Categories", Toast.LENGTH_SHORT).show()
+                                        listOfIngredents.clear()
+                                        for (document in p0.children) {
+                                            for (item in p0.child(document.key.toString()).children) {
+                                                listOfIngredents.add(IngredentsModel(item.value.toString()))
+                                            }
+                                        }
+                                        setUpRecyclerView(listOfIngredents)
+
+                                    }
+                                })
+
                         }else{
                             db.child("SubCategories").child(categoriesList[position]).addListenerForSingleValueEvent(object : ValueEventListener{
                                 override fun onCancelled(p0: DatabaseError) {}
 
                                 override fun onDataChange(p0: DataSnapshot) {
-                                    for(document in p0.children){
-                                        Toast.makeText(context, ""+document.value.toString(), Toast.LENGTH_SHORT).show()
+                                    listOfIngredents.clear()
+                                    for (document in p0.children) {
+                                        listOfIngredents.add(IngredentsModel(document.value.toString()))
                                     }
+//                                    Toast.makeText(context, ""+ listOfIngredents , Toast.LENGTH_SHORT).show()
+
+                                    setUpRecyclerView(listOfIngredents)
                                 }
                             })
                         }
@@ -166,7 +124,13 @@ class HomeFragment : Fragment() {
         })
 
 
+    }
 
+    private fun setUpRecyclerView(listOfIngredents: ArrayList<IngredentsModel>) {
+        recyclerview_list_of_sub_cats.setHasFixedSize(true)
+        recyclerview_list_of_sub_cats.layoutManager = GridLayoutManager(context, 1)
+        recyclerview_list_of_sub_cats.adapter =
+            ListOfIngredentsAdapter(requireContext(), listOfIngredents, this)
     }
 
 }

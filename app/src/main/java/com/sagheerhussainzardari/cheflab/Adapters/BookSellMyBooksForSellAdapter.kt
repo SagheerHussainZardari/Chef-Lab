@@ -6,16 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.sagheerhussainzardari.cheflab.Fragments.MyBooksForSellFragment
-import com.sagheerhussainzardari.cheflab.Models.BookSellModel
+import com.sagheerhussainzardari.cheflab.Models.IngredentsModel
 import com.sagheerhussainzardari.cheflab.R
-import com.sagheerhussainzardari.cheflab.toastshort
-import kotlinx.android.synthetic.main.recycler_layout_mybooksforsell.view.*
 
 class BookSellMyBooksForSellAdapter(
     var context: Context,
-    var booksList: ArrayList<BookSellModel>,
+    var booksList: ArrayList<IngredentsModel>,
     var booksForSellFragment: MyBooksForSellFragment
 ) :
     RecyclerView.Adapter<BookSellMyBooksForSellAdapter.MyViewHolder>() {
@@ -34,23 +31,23 @@ class BookSellMyBooksForSellAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
-        holder.view.btn_DeleteMyBooksForSell.setOnClickListener {
-            if (isInternetAvaiable())
-                booksForSellFragment.onBookDelete(booksList[position])
-            else
-                context.toastshort("No Internet Connection...\nTry Again...")
-        }
-        holder.view.btn_EditMyBooksForSell.setOnClickListener {
-            if (isInternetAvaiable())
-                booksForSellFragment.onBookEdit(booksList[position])
-            else
-                context.toastshort("No Internet Connection...\nTry Again...")
-        }
-
-        Glide.with(context).load(booksList[position].bookImageUrl)
-            .into(holder.view.iv_BookImageMyBooksForSell)
-        holder.view.tv_BookNameMyBooksForSell.text = booksList[position].bookName
+//
+//        holder.view.btn_DeleteMyBooksForSell.setOnClickListener {
+//            if (isInternetAvaiable())
+//                booksForSellFragment.onBookDelete(booksList[position])
+//            else
+//                context.toastshort("No Internet Connection...\nTry Again...")
+//        }
+//        holder.view.btn_EditMyBooksForSell.setOnClickListener {
+//            if (isInternetAvaiable())
+//                booksForSellFragment.onBookEdit(booksList[position])
+//            else
+//                context.toastshort("No Internet Connection...\nTry Again...")
+//        }
+//
+//        Glide.with(context).load(booksList[position].bookImageUrl)
+//            .into(holder.view.iv_BookImageMyBooksForSell)
+//        holder.view.tv_BookNameMyBooksForSell.text = booksList[position].bookName
     }
 
 

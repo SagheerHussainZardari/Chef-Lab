@@ -16,7 +16,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
-import com.sagheerhussainzardari.cheflab.Models.BookSellModel
 import com.sagheerhussainzardari.cheflab.R
 import com.sagheerhussainzardari.cheflab.toastlong
 import com.sagheerhussainzardari.cheflab.toastshort
@@ -178,38 +177,38 @@ class BookForSellFragment : Fragment() {
         db.child("BooksForSell").child(bookID).child("bookImageUrl").setValue(bookImageUrl)
 
 
-        updateBooksListInHome()
+//        updateBooksListInHome()
     }
 
-    private fun updateBooksListInHome() {
-        HomeFragment.db.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {}
-
-            override fun onDataChange(p0: DataSnapshot) {
-                HomeFragment.booksList.clear()
-                for (document in p0.children) {
-                    HomeFragment.booksList.add(
-                        BookSellModel(
-                            document.child("bookID").value.toString(),
-                            document.child("bookName").value.toString(),
-                            document.child("bookAuthor").value.toString(),
-                            document.child("bookPrice").value.toString(),
-                            document.child("bookSellerUID").value.toString(),
-                            document.child("bookSellerName").value.toString(),
-                            document.child("bookSellerPhone").value.toString(),
-                            document.child("bookSellerCity").value.toString(),
-                            document.child("bookRatings").value.toString(),
-                            document.child("bookImageUrl").value.toString()
-                        )
-                    )
-                }
-
-                progressBarLayoutSellBook.visibility = View.GONE
-                context?.toastlong("Book Added Successfully")
-            }
-        })
-    }
-
+//    private fun updateBooksListInHome() {
+//        HomeFragment.db.addListenerForSingleValueEvent(object : ValueEventListener {
+//            override fun onCancelled(p0: DatabaseError) {}
+//
+//            override fun onDataChange(p0: DataSnapshot) {
+//                HomeFragment.booksList.clear()
+//                for (document in p0.children) {
+//                    HomeFragment.booksList.add(
+//                        IngredentsModel(
+//                            document.child("bookID").value.toString(),
+//                            document.child("bookName").value.toString(),
+//                            document.child("bookAuthor").value.toString(),
+//                            document.child("bookPrice").value.toString(),
+//                            document.child("bookSellerUID").value.toString(),
+//                            document.child("bookSellerName").value.toString(),
+//                            document.child("bookSellerPhone").value.toString(),
+//                            document.child("bookSellerCity").value.toString(),
+//                            document.child("bookRatings").value.toString(),
+//                            document.child("bookImageUrl").value.toString()
+//                        )
+//                    )
+//                }
+//
+//                progressBarLayoutSellBook.visibility = View.GONE
+//                context?.toastlong("Book Added Successfully")
+//            }
+//        })
+//    }
+//
 
     private fun pickImageFromGallary() {
         val intent = Intent(Intent.ACTION_PICK)

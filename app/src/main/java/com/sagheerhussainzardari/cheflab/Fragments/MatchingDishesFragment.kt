@@ -46,6 +46,8 @@ class MatchingDishesFragment : Fragment() {
             override fun onDataChange(p0: DataSnapshot) {
                 dishesList.clear()
                 for (document in p0.children) {
+
+                    //ANY OF INGREDENTS FOUNT
                     var dishName = document.key.toString()
                     var newList = document.child("ingredents").value.toString().split(',')
                     var newListTrimed = ArrayList<String>()
@@ -65,6 +67,29 @@ class MatchingDishesFragment : Fragment() {
                     }
 
 
+                    //ALL INGREDENTS FOUND
+
+//                    var dishName = document.key.toString()
+//                    var newList = document.child("ingredents").value.toString().split(',')
+//                    var newListTrimed = ArrayList<String>()
+//                    for (item in newList) {
+//                        newListTrimed.add(item.trim())
+//                    }
+//                    var doFilter = true;
+//                    for (ingredent in HomeFragment.currentIngredents) {
+//                        var thisItemThere = false;
+//                        for (item in newListTrimed) {
+//                            if (item == ingredent) {
+//                                thisItemThere  = true;
+//                            }
+//                        }
+//                        if(!thisItemThere){
+//                            doFilter = false;
+//                        }
+//                    }
+//                    if (doFilter) {
+//                        dishesList.add(DishesModel(dishName))
+//                    }
                 }
 
                 setUpRecyclerView(dishesList)

@@ -70,8 +70,10 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    override fun onResume() {
-        super.onResume()
+    fun openMatchingDishes() {
+        this.toastshort("opeing dishes")
+        val navController = findNavController(R.id.nav_host_fragment)
+        navController.navigate(R.id.nav_mybooksforseller)
     }
 
     override fun onBackPressed() {

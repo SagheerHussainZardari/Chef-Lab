@@ -16,6 +16,7 @@ import com.sagheerhussainzardari.cheflab.Adapters.ListOfIngredentsAdapter
 import com.sagheerhussainzardari.cheflab.MainActivity
 import com.sagheerhussainzardari.cheflab.Models.IngredentsModel
 import com.sagheerhussainzardari.cheflab.R
+import com.sagheerhussainzardari.cheflab.toastshort
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -38,15 +39,6 @@ class HomeFragment : Fragment() {
         return root
     }
 
-    fun onItemChecked(ingredent: String) {
-        if (currentIngredents.contains(ingredent)) {
-            currentIngredents.remove(ingredent)
-        } else {
-            currentIngredents.add(ingredent)
-        }
-        tv_ingredentsSelected.text = currentIngredents.size.toString()
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -58,8 +50,25 @@ class HomeFragment : Fragment() {
 
         progressBarLayoutHomeFragment.setOnClickListener { }
 
+        fb_ingredentsSelected.setOnClickListener {
+            if (currentIngredents.size == 0) {
+                context?.toastshort("Please Select Atlest One Ingredent To View Dishes")
+            } else {
+                (activity as MainActivity).openMatchingDishes()
+            }
+        }
+
     }
 
+    fun onItemChecked(ingredent: String) {
+        if (currentIngredents.contains(ingredent)) {
+            currentIngredents.remove(ingredent)
+        } else {
+            currentIngredents.add(ingredent)
+        }
+        tv_ingredentsSelected.text = currentIngredents.size.toString()
+
+    }
 
     private fun setCategoriesSpinner() {
         categoriesList.clear()
@@ -128,6 +137,13 @@ class HomeFragment : Fragment() {
             }
         })
 
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        tv_ingredentsSelected.text = currentIngredents.size.toString()
 
     }
 

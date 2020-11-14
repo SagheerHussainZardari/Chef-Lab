@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.MatchingDishesFragment">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_matched_dishes_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <RelativeLayout
+        android:id="@+id/progressbar_DeleteBook"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.7"
+            android:background="#000" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressbar"
+            android:layout_centerInParent="true"
+            android:text="Deleting..."
+            android:textColor="#fff" />
+
+    </RelativeLayout>
+
+    <!--    <include-->
+    <!--        layout="@layout/layout_editbook"-->
+    <!--        android:visibility="gone"-->
+    <!--        android:id="@+id/bookEditLayout" />-->
+
+    <!--    <RelativeLayout-->
+    <!--        android:id="@+id/progressbar_EditBook"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:visibility="gone">-->
+
+    <!--        <View-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:alpha="0.7"-->
+    <!--            android:background="#000" />-->
+
+    <!--        <ProgressBar-->
+    <!--            android:id="@+id/progressbarr"-->
+    <!--            android:layout_width="56dp"-->
+    <!--            android:layout_height="56dp"-->
+    <!--            android:layout_centerInParent="true" />-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/progressbarr"-->
+    <!--            android:layout_centerInParent="true"-->
+    <!--            android:text="Updating..."-->
+    <!--            android:textColor="#fff" />-->
+
+    <!--    </RelativeLayout>-->
+
+
+</RelativeLayout>

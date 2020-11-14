@@ -32,9 +32,9 @@ class ListOfIngredentsAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 //
-//        holder.view.bookItemCard.setOnClickListener {
-////            homeFragment.onBookCardClicked(booksList[position].bookId.toInt())
-//        }
+        holder.view.checkbox.setOnClickListener {
+            homeFragment.onItemChecked(listOfIngredents[position].ingredentName)
+        }
 //        if (booksList[position].bookRatings == "0.0") {
 //            holder.view.tv_BookRatings.visibility = View.GONE
 //        }

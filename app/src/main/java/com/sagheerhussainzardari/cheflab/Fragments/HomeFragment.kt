@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.database.DataSnapshot
@@ -17,17 +16,17 @@ import com.sagheerhussainzardari.cheflab.Adapters.ListOfIngredentsAdapter
 import com.sagheerhussainzardari.cheflab.MainActivity
 import com.sagheerhussainzardari.cheflab.Models.IngredentsModel
 import com.sagheerhussainzardari.cheflab.R
+import com.sagheerhussainzardari.cheflab.toastshort
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
     companion object {
-        var booksList = ArrayList<IngredentsModel>()
         var db = FirebaseDatabase.getInstance().reference
-
         var categoriesList = ArrayList<String>()
         var listOfIngredents = ArrayList<IngredentsModel>()
-        var booksListFiltered = ArrayList<IngredentsModel>()
+        var currentIngredents = ArrayList<String>()
+
     }
 
     override fun onCreateView(
@@ -38,6 +37,11 @@ class HomeFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_home, container, false)
 
         return root
+    }
+
+    fun onItemChecked(ingredent: String) {
+        context?.toastshort("checked $ingredent")
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -81,11 +85,7 @@ class HomeFragment : Fragment() {
                         progressBarLayoutHomeFragment.visibility = View.VISIBLE
 
                         if (categoriesList[position] == " All Categories") {
-                            Toast.makeText(
-                                context,
-                                "Getting Data For All Categories",
-                                Toast.LENGTH_SHORT
-                            ).show()
+
 
                             db.child("SubCategories")
                                 .addListenerForSingleValueEvent(object : ValueEventListener {
@@ -112,7 +112,6 @@ class HomeFragment : Fragment() {
                                     for (document in p0.children) {
                                         listOfIngredents.add(IngredentsModel(document.value.toString()))
                                     }
-//                                    Toast.makeText(context, ""+ listOfIngredents , Toast.LENGTH_SHORT).show()
 
                                     setUpRecyclerView(listOfIngredents)
                                 }

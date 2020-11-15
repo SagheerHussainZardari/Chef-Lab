@@ -53,7 +53,7 @@
 
                 android:text="dish name"
                 android:textColor="#fff"
-                android:paddingLeft="16dp"
+                android:textAlignment="center"
                 android:textSize="26sp"
                 android:textStyle="bold"
                 android:paddingTop="16dp"
@@ -64,8 +64,8 @@
 
             <ImageView
                 android:id="@+id/btn_favDish"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:src="@drawable/ic_star"

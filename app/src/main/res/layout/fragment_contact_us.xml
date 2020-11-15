@@ -17,13 +17,14 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_marginBottom="32dp"
             android:src="@drawable/ic_food"
             android:tint="@color/colorPrimary" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Call Us: +92 3063092274"
+            android:text="Name: Mehmood"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
@@ -34,7 +35,7 @@
             android:autoSizeTextType="uniform"
             android:lines="1"
             android:padding="8dp"
-            android:text="Email Us: Sagheerhzardari@gmail.com"
+            android:text="Call Us: +92 3037411391"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp" />

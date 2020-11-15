@@ -6,7 +6,7 @@
     android:layout_marginLeft="8dp"
     android:layout_marginTop="12dp"
     android:layout_marginRight="8dp"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
 
     <com.google.android.material.card.MaterialCardView
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:elevation="16dp"
-        app:cardBackgroundColor="#010101"
+        app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="16dp"
 
         app:cardElevation="16dp">
@@ -26,84 +26,88 @@
 
             <ImageView
                 android:id="@+id/iv_videoLogo"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="300px"
+                android:layout_height="300px"
                 android:src="@drawable/ic_play"
                 android:translationZ="90dp"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_dishImage"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tv_dish_name"
-                app:layout_constraintTop_toTopOf="@+id/iv_dishImage" />
+                app:layout_constraintEnd_toEndOf="@+id/iv_dishImage"
+                app:layout_constraintStart_toStartOf="@+id/iv_dishImage"
+                app:layout_constraintTop_toTopOf="@+id/iv_dishImage"
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/iv_dishImage"
-                android:layout_width="match_parent"
-                android:layout_height="350px"
+                android:layout_width="300px"
+                android:layout_height="300px"
                 android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"></ImageView>
 
             <TextView
                 android:id="@+id/tv_dish_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
+                android:layout_width="0dp"
+                android:layout_height="300px"
+                android:gravity="center_vertical"
                 android:text="dish name"
-                android:textAlignment="center"
                 android:textColor="#fff"
-                android:textSize="30sp"
+                android:paddingLeft="16dp"
+                android:textSize="26sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@+id/iv_dishImage" />
-
-            <TextView
-                android:id="@+id/tv_ingredents"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:padding="8dp"
-                android:text="Ingredents: "
-                android:textColor="#fff"
-                android:textSize="16sp"
-
-                app:layout_constraintTop_toBottomOf="@+id/tv_dish_name" />
-
-            <TextView
-                android:id="@+id/tv_ingredentsRemaining"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:padding="8dp"
-                android:text="Ingredents Remaing: "
-                android:textColor="#fff"
-                android:textSize="16sp"
-
-                app:layout_constraintTop_toBottomOf="@+id/tv_ingredents" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_dishImage"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-            <TextView
-                android:id="@+id/tv_duration"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:padding="8dp"
-                android:text="Duration: "
-                android:textColor="#fff"
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_ingredents"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginLeft="8dp"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text="Ingredents: "-->
+            <!--                android:textColor="#fff"-->
+            <!--                android:textSize="16sp"-->
 
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_ingredentsRemaining" />
+            <!--                app:layout_constraintTop_toBottomOf="@+id/tv_dish_name" />-->
 
-            <TextView
-                android:id="@+id/tv_cookingMethod"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:padding="8dp"
-                android:text="Reciepe: "
-                android:textColor="#fff"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_duration" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_ingredentsRemaining"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginLeft="8dp"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text="Ingredents Remaing: "-->
+            <!--                android:textColor="#fff"-->
+            <!--                android:textSize="16sp"-->
+
+            <!--                app:layout_constraintTop_toBottomOf="@+id/tv_ingredents" />-->
+
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_duration"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginLeft="8dp"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text="Duration: "-->
+            <!--                android:textColor="#fff"-->
+
+            <!--                android:textSize="16sp"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/tv_ingredentsRemaining" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_cookingMethod"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginLeft="8dp"-->
+            <!--                android:padding="3dp"-->
+            <!--                android:text="Reciepe: "-->
+            <!--                android:textColor="#fff"-->
+            <!--                android:textSize="16sp"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/tv_duration" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

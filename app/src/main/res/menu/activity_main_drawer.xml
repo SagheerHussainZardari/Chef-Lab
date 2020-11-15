@@ -9,15 +9,16 @@
             android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
 
-<!--        <item-->
-<!--            android:id="@+id/nav_sellbook"-->
-<!--            android:icon="@drawable/ic_sellbook"-->
-<!--            android:title="Sell A Book" />-->
+        <item
+            android:id="@+id/nav_scan_ingredents"
+            android:icon="@drawable/ic_camera"
+            android:iconTint="#000"
+            android:title="Scan Ingredents" />
 
-<!--        <item-->
-<!--            android:id="@+id/nav_mybooksforseller"-->
-<!--            android:icon="@drawable/ic_sellbook"-->
-<!--            android:title="My Books For Sell" />-->
+        <!--        <item-->
+        <!--            android:id="@+id/nav_mybooksforseller"-->
+        <!--            android:icon="@drawable/ic_sellbook"-->
+        <!--            android:title="My Books For Sell" />-->
 
         <item
             android:id="@+id/nav_editprofile"

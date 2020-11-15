@@ -41,7 +41,11 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_sellbook, R.id.nav_editprofile, R.id.nav_mybooksforseller
+                R.id.nav_home,
+                R.id.nav_sellbook,
+                R.id.nav_editprofile,
+                R.id.nav_mybooksforseller,
+                R.id.nav_scan_ingredents
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -71,7 +75,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openMatchingDishes() {
-        this.toastshort("opeing dishes")
         val navController = findNavController(R.id.nav_host_fragment)
         navController.navigate(R.id.nav_mybooksforseller)
     }

@@ -35,8 +35,12 @@ class DishesAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.view.iv_videoLogo.setOnClickListener {
 
-            booksForSellFragment.onCardClik(dishesList[position].dishVideo)
+            booksForSellFragment.onVideoIconClicked(dishesList[position].dishVideo)
 
+        }
+
+        holder.view.dish_card.setOnClickListener {
+            booksForSellFragment.onCardClicked(dishesList[position])
         }
 
         holder.view.tv_dish_name.text = dishesList[position].dishName

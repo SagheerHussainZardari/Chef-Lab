@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sagheerhussainzardari.cheflab.Adapters.DishesAdapter
+import com.sagheerhussainzardari.cheflab.MainActivity
 import com.sagheerhussainzardari.cheflab.Models.DishesModel
 import com.sagheerhussainzardari.cheflab.R
 import kotlinx.android.synthetic.main.fragment_matched_dishes.*
@@ -25,7 +26,7 @@ class MatchingDishesFragment : Fragment() {
 
         var db = FirebaseDatabase.getInstance().reference
         var dishesList = ArrayList<DishesModel>()
-
+        var currentSelectedDish: DishesModel? = null
     }
 
     override fun onCreateView(
@@ -127,11 +128,11 @@ class MatchingDishesFragment : Fragment() {
     }
 
 
-    fun onCardClik(dishVideo: String) {
+    fun onVideoIconClicked(dishVideo: String) {
         if (dishVideo != "" && dishVideo != "null") {
             val intentBrowser = Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse("https://www.youtube.com/watch?v=pn9mO1Qo-xI&ab_channel=freekerzz")
+                Uri.parse(dishVideo)
             )
             try {
                 context?.startActivity(intentBrowser)
@@ -147,6 +148,11 @@ class MatchingDishesFragment : Fragment() {
             DishesAdapter(requireContext(), dishesList, this)
 
         progressbar_DeleteBook.visibility = View.GONE
+    }
+
+    fun onCardClicked(dishItem: DishesModel) {
+        currentSelectedDish = dishItem
+        (activity as MainActivity).openDetailDish()
     }
 
 

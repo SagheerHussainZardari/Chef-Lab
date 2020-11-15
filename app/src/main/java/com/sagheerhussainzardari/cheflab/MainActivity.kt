@@ -45,7 +45,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_sellbook,
                 R.id.nav_editprofile,
                 R.id.nav_mybooksforseller,
-                R.id.nav_scan_ingredents
+                R.id.nav_scan_ingredents,
+                R.id.nav_dishDetailFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -93,6 +94,11 @@ class MainActivity : AppCompatActivity() {
 
     fun onCardClick(id: String) {
         this.toastshort(id)
+    }
+
+    fun openDetailDish() {
+        val navController = findNavController(R.id.nav_host_fragment)
+        navController.navigate(R.id.nav_dishDetailFragment)
     }
 
 }

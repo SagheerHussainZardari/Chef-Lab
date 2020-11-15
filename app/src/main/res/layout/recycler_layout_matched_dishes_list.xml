@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:elevation="16dp"
-        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardBackgroundColor="#373737"
         app:cardCornerRadius="16dp"
 
         app:cardElevation="16dp">

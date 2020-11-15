@@ -9,11 +9,18 @@
             android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
 
-        <item
-            android:id="@+id/nav_scan_ingredents"
-            android:icon="@drawable/ic_camera"
-            android:iconTint="#000"
-            android:title="Scan Ingredents" />
+        <!--        <item-->
+        <!--            android:id="@+id/nav_scan_ingredents"-->
+        <!--            android:icon="@drawable/ic_camera"-->
+        <!--            android:iconTint="#000"-->
+        <!--            android:title="Scan Ingredents" />-->
+
+        <!--                <item-->
+        <!--                    android:id="@+id/nav_dishDetailFragment"-->
+        <!--                    android:icon="@drawable/ic_book"-->
+        <!--                    android:iconTint="#000"-->
+        <!--                    android:title="Dish Details" />-->
+
 
         <!--        <item-->
         <!--            android:id="@+id/nav_mybooksforseller"-->

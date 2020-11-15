@@ -45,6 +45,11 @@
         android:name="com.sagheerhussainzardari.cheflab.Fragments.ScanIngredentsFragment"
         android:label="Scan Ingredents"
         tools:layout="@layout/fragment_scan_ingredents" />
+    <fragment
+        android:id="@+id/nav_dishDetailFragment"
+        android:name="com.sagheerhussainzardari.cheflab.Fragments.DishDetailFragment"
+        android:label="Dish Detail"
+        tools:layout="@layout/fragment_dish_detail" />
 
 
 </navigation>

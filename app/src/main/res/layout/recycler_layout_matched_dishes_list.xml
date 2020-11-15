@@ -30,7 +30,7 @@
                 android:layout_height="300px"
                 android:src="@drawable/ic_play"
                 android:translationZ="90dp"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_dishImage"
                 app:layout_constraintEnd_toEndOf="@+id/iv_dishImage"
                 app:layout_constraintStart_toStartOf="@+id/iv_dishImage"
@@ -42,6 +42,7 @@
                 android:layout_width="300px"
                 android:layout_height="300px"
                 android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"></ImageView>
 
@@ -49,17 +50,28 @@
                 android:id="@+id/tv_dish_name"
                 android:layout_width="0dp"
                 android:layout_height="300px"
-                android:gravity="center_vertical"
+
                 android:text="dish name"
                 android:textColor="#fff"
                 android:paddingLeft="16dp"
                 android:textSize="26sp"
                 android:textStyle="bold"
+                android:paddingTop="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_dishImage"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/btn_favDish"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_star"
+                android:translationZ="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <!--            <TextView-->
             <!--                android:id="@+id/tv_ingredents"-->

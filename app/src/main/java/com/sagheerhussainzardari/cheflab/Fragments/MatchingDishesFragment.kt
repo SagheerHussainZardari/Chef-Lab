@@ -122,6 +122,7 @@ class MatchingDishesFragment : Fragment() {
 //                    }
                 }
 
+                tv_TotalDishedFound.text = dishesList.size.toString()
                 setUpRecyclerView(dishesList)
             }
         })

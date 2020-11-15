@@ -53,13 +53,13 @@ class DishDetailFragment : Fragment() {
         }
 
         tv_ingredentsAvaiable.text =
-            "Ingredents: " + MatchingDishesFragment.currentSelectedDish?.dishIngredents.toString()
+            MatchingDishesFragment.currentSelectedDish?.dishIngredents.toString()
         tv_ingredentsRemaing.text =
-            "Ingredents To Buy: " + MatchingDishesFragment.currentSelectedDish?.dishRemaingIngredents.toString()
+            MatchingDishesFragment.currentSelectedDish?.dishRemaingIngredents.toString()
         tv_cookingMethod.text =
-            "Cooking Method: \n" + MatchingDishesFragment.currentSelectedDish?.dishCookingMethod.toString()
+            MatchingDishesFragment.currentSelectedDish?.dishCookingMethod.toString()
         tv_duration.text =
-            "Duration: " + MatchingDishesFragment.currentSelectedDish?.dishDuration.toString()
+            MatchingDishesFragment.currentSelectedDish?.dishDuration.toString()
     }
 
 }

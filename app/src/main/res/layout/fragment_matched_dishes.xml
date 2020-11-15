@@ -6,11 +6,32 @@
     android:orientation="vertical"
     tools:context=".Fragments.MatchingDishesFragment">
 
+    <TextView
+        android:id="@+id/tv_awien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Total Dishes Found"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_TotalDishedFound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_awien"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="0"
+        android:textColor="#000"
+        android:textSize="50sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_matched_dishes_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_TotalDishedFound"
+        android:layout_marginTop="0dp" />
 
 
     <RelativeLayout

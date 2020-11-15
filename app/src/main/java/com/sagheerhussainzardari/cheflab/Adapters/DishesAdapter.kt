@@ -53,11 +53,11 @@ class DishesAdapter(
 //        holder.view.tv_cookingMethod.text =
 //            "Cooking Method: " + dishesList[position].dishCookingMethod
 
-        if (dishesList[position].dishVideo != "" && dishesList[position].dishVideo != "null") {
-            holder.view.iv_videoLogo.visibility = View.VISIBLE
-        } else {
-            holder.view.iv_videoLogo.visibility = View.GONE
-        }
+//        if (dishesList[position].dishVideo != "" && dishesList[position].dishVideo != "null") {
+//            holder.view.iv_videoLogo.visibility = View.VISIBLE
+//        } else {
+//            holder.view.iv_videoLogo.visibility = View.GONE
+//        }
         Glide.with(context).load(dishesList[position].dishImgUrl).into(holder.view.iv_dishImage)
     }
 

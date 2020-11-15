@@ -19,7 +19,7 @@
             <ImageView
                 android:id="@+id/iv_dImage"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="250dp"
                 android:scaleType="fitXY" />
 
             <Button
@@ -31,28 +31,53 @@
                 android:visibility="visible" />
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Ingredents"
+                android:textColor="#fff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/tv_ingredentsAvaiable"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:gravity="center_vertical"
-                android:text="Ingredents:"
+                android:text=""
+                android:textAlignment="center"
                 android:textColor="#fff"
                 android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Ingredents You Need To Buy"
+                android:textColor="#fff"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
                 android:weightSum="10">
 
                 <TextView
                     android:id="@+id/tv_ingredentsRemaing"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="8"
+                    android:layout_weight="6"
                     android:gravity="center_vertical"
-                    android:text="Ingredents To Buy"
+                    android:text=""
                     android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -61,9 +86,23 @@
                     android:id="@+id/btn_addToCart"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:text="Add" />
+                    android:layout_weight="4"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:drawableStart="@drawable/ic_star"
+                    android:drawableTint="#fff"
+                    android:text="Add To Shopping List" />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Time For Cooking"
+                android:textColor="#fff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_duration"
@@ -71,9 +110,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Duration:"
+                android:textAlignment="center"
                 android:textColor="#fff"
                 android:textSize="18sp"
                 android:textStyle="bold|italic" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="How To Cook"
+                android:textColor="#fff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_cookingMethod"
@@ -82,7 +133,9 @@
                 android:layout_marginTop="16dp"
                 android:text="Cooking Method:"
                 android:textColor="#fff"
+                android:layout_marginBottom="16dp"
                 android:textSize="18sp"
+                android:textAlignment="center"
                 android:textStyle="bold|italic" />
 
         </LinearLayout>

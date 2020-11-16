@@ -41,9 +41,10 @@
         android:layout_height="match_parent" />
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/btn_ClearList"
         android:orientation="horizontal"
         android:weightSum="10">
 
@@ -63,4 +64,12 @@
             android:text="Scan More" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_ClearList"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#ff0000"
+        android:text="Clear List" />
 </RelativeLayout>

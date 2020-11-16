@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sagheerhussainzardari.cheflab.Adapters.FavDishesAdapter
+import com.sagheerhussainzardari.cheflab.Models.DishesModel
 import com.sagheerhussainzardari.cheflab.R
 import com.sagheerhussainzardari.cheflab.toastlong
 import com.sagheerhussainzardari.cheflab.toastshort
@@ -22,6 +23,7 @@ class FavDishesFragment : Fragment() {
 
     companion object {
         var list = ArrayList<String>()
+        var dishesListFav = ArrayList<DishesModel>()
     }
 
     override fun onCreateView(
@@ -56,23 +58,54 @@ class FavDishesFragment : Fragment() {
                 if (length.toString() == "0") {
                     context?.toastlong("No Favourite Dishes Found!!!")
                 }
+                list.clear()
                 for (item in p0.children) {
                     length -= 1
                     var dish = item.value.toString()
 
                     list.add(dish)
 
-                    if (length.toString() == "0") {
-                        openHomeFragemnt()
+                    FirebaseDatabase.getInstance().getReference("AllDishes").child(dish)
+                        .addListenerForSingleValueEvent(object : ValueEventListener {
+                            override fun onCancelled(p0: DatabaseError) {}
 
-                    }
+                            override fun onDataChange(p0: DataSnapshot) {
+                                HomeFragment.currentIngredents.addAll(
+                                    p0.child("ingredents").value.toString().split(',')
+                                )
+
+                                if (length.toString() == "0") {
+                                    context?.toastshort(HomeFragment.currentIngredents.toString())
+
+                                    openMatchedDishes()
+                                }
+                            }
+                        })
+
+
                 }
 
             }
         })
+
+
     }
 
-    private fun openHomeFragemnt() {
+
+    private fun openMatchedDishes() {
+        dishesListFav.add(
+            DishesModel(
+                "sagheer",
+                "zardari",
+                "[1,2,3]",
+                "cokking",
+                "2 hours",
+                "",
+                ""
+            )
+        )
+
+//        (activity as MainActivity).openMatchingDishes()
 
         rv_favDishes.setHasFixedSize(true)
         rv_favDishes.layoutManager = GridLayoutManager(context, 1)

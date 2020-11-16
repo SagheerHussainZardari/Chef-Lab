@@ -77,7 +77,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openMatchingDishes() {
+
         val navController = findNavController(R.id.nav_host_fragment)
+
         navController.navigate(R.id.nav_mybooksforseller)
     }
 

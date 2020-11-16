@@ -18,7 +18,6 @@ import com.sagheerhussainzardari.cheflab.Adapters.DishesAdapter
 import com.sagheerhussainzardari.cheflab.MainActivity
 import com.sagheerhussainzardari.cheflab.Models.DishesModel
 import com.sagheerhussainzardari.cheflab.R
-import com.sagheerhussainzardari.cheflab.toastshort
 import kotlinx.android.synthetic.main.fragment_matched_dishes.*
 
 class MatchingDishesFragment : Fragment() {
@@ -158,7 +157,7 @@ class MatchingDishesFragment : Fragment() {
     }
 
     fun onFavIconClicked(dishName: String) {
-        context?.toastshort("dish name is = $dishName")
+//        context?.toastshort("dish name is = $dishName")
         var mAuth = FirebaseAuth.getInstance()
         var db = FirebaseDatabase.getInstance().getReference("FavDishes")
             .child(mAuth.currentUser?.uid.toString())

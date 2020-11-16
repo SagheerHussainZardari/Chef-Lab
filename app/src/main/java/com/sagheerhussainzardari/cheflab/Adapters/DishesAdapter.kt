@@ -9,7 +9,6 @@ import com.bumptech.glide.Glide
 import com.sagheerhussainzardari.cheflab.Fragments.MatchingDishesFragment
 import com.sagheerhussainzardari.cheflab.Models.DishesModel
 import com.sagheerhussainzardari.cheflab.R
-import com.sagheerhussainzardari.cheflab.toastshort
 import kotlinx.android.synthetic.main.recycler_layout_matched_dishes_list.view.*
 
 
@@ -39,7 +38,7 @@ class DishesAdapter(
         }
 
         holder.view.btn_favDish.setOnClickListener {
-            context.toastshort("fav icon clicked")
+//            context.toastshort("fav icon clicked")
 
             matchedDishesFragment.onFavIconClicked(dishesList[position].dishName)
         }

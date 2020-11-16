@@ -60,6 +60,18 @@ class ScanIngredentsFragment : Fragment() {
             }
         }
 
+        btn_ClearList.setOnClickListener {
+            lablesList.clear()
+            labelListModel.clear()
+            rv_scanedResult
+            rv_scanedResult.setHasFixedSize(true)
+            rv_scanedResult.layoutManager = GridLayoutManager(context, 2)
+            rv_scanedResult.adapter =
+                ListScannedIngredentsAdapter(requireContext(), labelListModel, this)
+
+            context?.toastshort("List Cleared")
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -111,12 +123,8 @@ class ScanIngredentsFragment : Fragment() {
     fun onItemChecked(ingredentName: String) {
         if (lablesList.contains(ingredentName)) {
             lablesList.remove(ingredentName)
-            context?.toastshort("Item Removed")
-
         } else {
             lablesList.add(ingredentName)
-            context?.toastshort("Item Added")
-
         }
     }
 

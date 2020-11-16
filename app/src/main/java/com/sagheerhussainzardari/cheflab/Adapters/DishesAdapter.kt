@@ -64,8 +64,4 @@ class DishesAdapter(
 //        }
         Glide.with(context).load(dishesList[position].dishImgUrl).into(holder.view.iv_dishImage)
     }
-
-
 }
-
-

@@ -1,13 +1,16 @@
 package com.sagheerhussainzardari.cheflab.Fragments
 
+import android.Manifest
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.ml.vision.FirebaseVision
@@ -40,21 +43,22 @@ class ScanIngredentsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(cameraIntent, 200)
+
+
+        callCamera()
 
 
         btn_ScanMore.setOnClickListener {
-            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(cameraIntent, 200)
-
+//            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE) //
+//            startActivityForResult(cameraIntent, 200)
+            callCamera()
         }
 
         btn_ScanFinish.setOnClickListener {
 
             context?.toastlong(lablesList.toString())
             if (lablesList.size == 0) {
-                context?.toastshort("Nothing Scanned Please ReScan")
+                context?.toastshort("Select Any One Of The Ingredients")
             } else {
                 (activity as MainActivity).openMatchingDishes()
             }
@@ -72,6 +76,28 @@ class ScanIngredentsFragment : Fragment() {
             context?.toastshort("List Cleared")
         }
 
+    }
+
+    private fun callCamera() {
+        when {
+            ContextCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_GRANTED -> {
+                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                startActivityForResult(cameraIntent, 200)
+
+            }
+            else -> {
+                requestPermissions(
+                    arrayOf(Manifest.permission.CAMERA),
+                    201
+                )
+
+                callCamera()
+
+            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

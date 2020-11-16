@@ -75,7 +75,7 @@ class FavDishesFragment : Fragment() {
                                 )
 
                                 if (length.toString() == "0") {
-                                    context?.toastshort(HomeFragment.currentIngredents.toString())
+//                                    context?.toastshort(HomeFragment.currentIngredents.toString())
 
                                     openMatchedDishes()
                                 }

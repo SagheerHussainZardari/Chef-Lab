@@ -67,7 +67,6 @@ class HomeFragment : Fragment() {
             currentIngredents.add(ingredent)
         }
         tv_ingredentsSelected.text = currentIngredents.size.toString()
-
     }
 
     fun onCardClik(dishVideo: String) {

@@ -8,17 +8,27 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
+import com.sagheerhussainzardari.cheflab.Adapters.ListScannedIngredentsAdapter
 import com.sagheerhussainzardari.cheflab.MainActivity
+import com.sagheerhussainzardari.cheflab.Models.IngredentsModel
 import com.sagheerhussainzardari.cheflab.R
 import com.sagheerhussainzardari.cheflab.toastlong
 import com.sagheerhussainzardari.cheflab.toastshort
+import kotlinx.android.synthetic.main.fragment_scan_ingredents.*
 
 
 class ScanIngredentsFragment : Fragment() {
+
+    companion object {
+        var lablesList = ArrayList<String>()
+        var labelListModel = ArrayList<IngredentsModel>()
+
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,12 +44,28 @@ class ScanIngredentsFragment : Fragment() {
         startActivityForResult(cameraIntent, 200)
 
 
+        btn_ScanMore.setOnClickListener {
+            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(cameraIntent, 200)
+
+        }
+
+        btn_ScanFinish.setOnClickListener {
+
+            context?.toastlong(lablesList.toString())
+            if (lablesList.size == 0) {
+                context?.toastshort("Nothing Scanned Please ReScan")
+            } else {
+                (activity as MainActivity).openMatchingDishes()
+            }
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == 200 && data != null) {
-            Toast.makeText(context, "got image", Toast.LENGTH_SHORT).show()
+
 //            iv_scanned_img.setImageBitmap(data.extras?.get("data") as Bitmap)
 
             val image = FirebaseVisionImage.fromBitmap(data.extras?.get("data") as Bitmap)
@@ -48,43 +74,48 @@ class ScanIngredentsFragment : Fragment() {
 
             labeler.processImage(image)
                 .addOnSuccessListener { labels ->
-                    var lablesList = ArrayList<String>()
 
                     for (label in labels) {
                         val text = label.text
                         val entityId = label.entityId
                         val confidence = label.confidence
-                        lablesList.add("$text")
+
+                        if (confidence > 0.60) {
+                            if (!(labelListModel.contains(IngredentsModel("$text")))) {
+//                                lablesList.add("$text")
+                                labelListModel.add(IngredentsModel("$text"))
+                            }
+                        }
                     }
 
 
-//                    lablesList.add("Tea")
-
-                    context?.toastlong(lablesList.toString())
 
                     HomeFragment.currentIngredents = lablesList
 
 
-                    if (lablesList.size == 0) {
-                        context?.toastshort("Nothing Scanned Please ReScan")
-                    } else {
-                        (activity as MainActivity).openMatchingDishes()
-                    }
 
-
-//                    tv_result.text = lables.toString()
-
-
-//                    rv_scanedResult.setHasFixedSize(true)
-//                    rv_scanedResult.layoutManager = GridLayoutManager(context, 2)
-//                    rv_scanedResult.adapter =
-//                        DishesScannedAdapter(requireContext(), lables, HomeFragment())
-
+                    rv_scanedResult
+                    rv_scanedResult.setHasFixedSize(true)
+                    rv_scanedResult.layoutManager = GridLayoutManager(context, 2)
+                    rv_scanedResult.adapter =
+                        ListScannedIngredentsAdapter(requireContext(), labelListModel, this)
 
                 }
                 .addOnFailureListener { e ->
-//                    tv_result.text = e.localizedMessage
+                    context?.toastlong(e.localizedMessage)
                 }
+
+        }
+    }
+
+    fun onItemChecked(ingredentName: String) {
+        if (lablesList.contains(ingredentName)) {
+            lablesList.remove(ingredentName)
+            context?.toastshort("Item Removed")
+
+        } else {
+            lablesList.add(ingredentName)
+            context?.toastshort("Item Added")
 
         }
     }

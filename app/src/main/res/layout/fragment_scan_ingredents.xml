@@ -40,27 +40,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="48dp"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        android:weightSum="10"-->
-    <!--        android:layout_alignParentBottom="true">-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="10">
 
-    <!--    <Button-->
-    <!--        android:id="@+id/btn_ScanMore"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_weight="5"-->
-    <!--        android:text="Scan More"-->
-    <!--        android:backgroundTint="@color/colorPrimaryDark"-->
-    <!--        android:layout_height="match_parent"/>-->
+        <Button
+            android:id="@+id/btn_ScanFinish"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Show Results" />
 
-    <!--        <Button-->
-    <!--            android:id="@+id/btn_ScanFinish"-->
-    <!--            android:layout_width="0dp"-->
-    <!--            android:layout_weight="5"-->
-    <!--            android:text="Scan More"-->
-    <!--            android:layout_height="match_parent"/>-->
+        <Button
+            android:id="@+id/btn_ScanMore"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="Scan More" />
 
-    <!--    </LinearLayout>-->
+    </LinearLayout>
 </RelativeLayout>

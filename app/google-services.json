@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "225861194402",
-    "firebase_url": "https://cheflab-8f7ab.firebaseio.com",
-    "project_id": "cheflab-8f7ab",
-    "storage_bucket": "cheflab-8f7ab.appspot.com"
+    "project_number": "452003822814",
+    "firebase_url": "https://chef-lab-8781f.firebaseio.com",
+    "project_id": "chef-lab-8781f",
+    "storage_bucket": "chef-lab-8781f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:225861194402:android:48437055f75e10b9ebbdfb",
+        "mobilesdk_app_id": "1:452003822814:android:8f17132ee12eabc21cd64f",
         "android_client_info": {
           "package_name": "com.sagheerhussainzardari.cheflab"
         }
       },
       "oauth_client": [
         {
-          "client_id": "225861194402-aviofs59bh9r6o205d0ljlim5om8uud9.apps.googleusercontent.com",
+          "client_id": "452003822814-q46jl4q9f3v4v3lj86hrl1fg17vmd2gp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDx6e2EgpAwERuUkhYfbC1hUhMXVl1Ia2Y"
+          "current_key": "AIzaSyADS-6cmE1vn-m3VxcjqtorRik3xeE_v9k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "225861194402-aviofs59bh9r6o205d0ljlim5om8uud9.apps.googleusercontent.com",
+              "client_id": "452003822814-q46jl4q9f3v4v3lj86hrl1fg17vmd2gp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

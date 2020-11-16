@@ -9,13 +9,14 @@ import com.bumptech.glide.Glide
 import com.sagheerhussainzardari.cheflab.Fragments.MatchingDishesFragment
 import com.sagheerhussainzardari.cheflab.Models.DishesModel
 import com.sagheerhussainzardari.cheflab.R
+import com.sagheerhussainzardari.cheflab.toastshort
 import kotlinx.android.synthetic.main.recycler_layout_matched_dishes_list.view.*
 
 
 class DishesAdapter(
     var context: Context,
     var dishesList: ArrayList<DishesModel>,
-    var booksForSellFragment: MatchingDishesFragment
+    var matchedDishesFragment: MatchingDishesFragment
 ) :
     RecyclerView.Adapter<DishesAdapter.MyViewHolder>() {
 
@@ -34,13 +35,17 @@ class DishesAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.view.iv_videoLogo.setOnClickListener {
+            matchedDishesFragment.onVideoIconClicked(dishesList[position].dishVideo)
+        }
 
-            booksForSellFragment.onVideoIconClicked(dishesList[position].dishVideo)
+        holder.view.btn_favDish.setOnClickListener {
+            context.toastshort("fav icon clicked")
 
+            matchedDishesFragment.onFavIconClicked(dishesList[position].dishName)
         }
 
         holder.view.dish_card.setOnClickListener {
-            booksForSellFragment.onCardClicked(dishesList[position])
+            matchedDishesFragment.onCardClicked(dishesList[position])
         }
 
         holder.view.tv_dish_name.text = dishesList[position].dishName

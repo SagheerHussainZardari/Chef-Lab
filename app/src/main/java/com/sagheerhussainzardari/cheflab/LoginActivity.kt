@@ -124,7 +124,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
     private fun onRetryButtonClicked() {
-        onResume()
+        onStart()
     }
 
     private fun isInternetAvaiable(): Boolean {

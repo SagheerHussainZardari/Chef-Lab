@@ -17,6 +17,7 @@ import com.sagheerhussainzardari.cheflab.Adapters.DishesAdapter
 import com.sagheerhussainzardari.cheflab.MainActivity
 import com.sagheerhussainzardari.cheflab.Models.DishesModel
 import com.sagheerhussainzardari.cheflab.R
+import com.sagheerhussainzardari.cheflab.toastshort
 import kotlinx.android.synthetic.main.fragment_matched_dishes.*
 
 class MatchingDishesFragment : Fragment() {
@@ -40,6 +41,8 @@ class MatchingDishesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //            context?.toastshort(HomeFragment.currentIngredents.toString())
         progressbar_DeleteBook.visibility = View.VISIBLE
+
+
 
         getAllDishes()
     }
@@ -154,6 +157,10 @@ class MatchingDishesFragment : Fragment() {
     fun onCardClicked(dishItem: DishesModel) {
         currentSelectedDish = dishItem
         (activity as MainActivity).openDetailDish()
+    }
+
+    fun onFavIconClicked(dishName: String) {
+        context?.toastshort("dish name is = $dishName")
     }
 
 

@@ -53,7 +53,7 @@
 
                 android:text="dish name"
                 android:textColor="#fff"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textSize="26sp"
                 android:textStyle="bold"
                 android:paddingTop="16dp"

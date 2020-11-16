@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -23,8 +24,6 @@ import kotlinx.android.synthetic.main.fragment_matched_dishes.*
 class MatchingDishesFragment : Fragment() {
 
     companion object {
-
-
         var db = FirebaseDatabase.getInstance().reference
         var dishesList = ArrayList<DishesModel>()
         var currentSelectedDish: DishesModel? = null
@@ -73,7 +72,6 @@ class MatchingDishesFragment : Fragment() {
                     }
                     var remaining_items = ArrayList<String>()
                     for (item in newListTrimed) {
-//                        [sugar , milk , water , tea]
                         var itemFound = false
                         for (ingredent in HomeFragment.currentIngredents) {
 //                            [sugar]
@@ -161,6 +159,11 @@ class MatchingDishesFragment : Fragment() {
 
     fun onFavIconClicked(dishName: String) {
         context?.toastshort("dish name is = $dishName")
+        var mAuth = FirebaseAuth.getInstance()
+        var db = FirebaseDatabase.getInstance().getReference("FavDishes")
+            .child(mAuth.currentUser?.uid.toString())
+
+        db.child(dishName).setValue(dishName)
     }
 
 

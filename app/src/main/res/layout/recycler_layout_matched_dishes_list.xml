@@ -56,6 +56,7 @@
                 android:textAlignment="textStart"
                 android:textSize="26sp"
                 android:textStyle="bold"
+                android:paddingLeft="16dp"
                 android:paddingTop="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -66,60 +67,14 @@
                 android:id="@+id/btn_favDish"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginBottom="8dp"
                 android:src="@drawable/ic_star"
                 android:translationZ="40dp"
+                android:tint="#d4d4d4"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!--            <TextView-->
-            <!--                android:id="@+id/tv_ingredents"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginLeft="8dp"-->
-            <!--                android:padding="3dp"-->
-            <!--                android:text="Ingredents: "-->
-            <!--                android:textColor="#fff"-->
-            <!--                android:textSize="16sp"-->
-
-            <!--                app:layout_constraintTop_toBottomOf="@+id/tv_dish_name" />-->
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/tv_ingredentsRemaining"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginLeft="8dp"-->
-            <!--                android:padding="3dp"-->
-            <!--                android:text="Ingredents Remaing: "-->
-            <!--                android:textColor="#fff"-->
-            <!--                android:textSize="16sp"-->
-
-            <!--                app:layout_constraintTop_toBottomOf="@+id/tv_ingredents" />-->
-
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/tv_duration"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginLeft="8dp"-->
-            <!--                android:padding="3dp"-->
-            <!--                android:text="Duration: "-->
-            <!--                android:textColor="#fff"-->
-
-            <!--                android:textSize="16sp"-->
-            <!--                app:layout_constraintTop_toBottomOf="@+id/tv_ingredentsRemaining" />-->
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/tv_cookingMethod"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginLeft="8dp"-->
-            <!--                android:padding="3dp"-->
-            <!--                android:text="Reciepe: "-->
-            <!--                android:textColor="#fff"-->
-            <!--                android:textSize="16sp"-->
-            <!--                app:layout_constraintTop_toBottomOf="@+id/tv_duration" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

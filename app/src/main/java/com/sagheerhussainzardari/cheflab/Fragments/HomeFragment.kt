@@ -103,7 +103,6 @@ class HomeFragment : Fragment() {
 
                         if (categoriesList[position] == " All Categories") {
 
-
                             db.child("SubCategories")
                                 .addListenerForSingleValueEvent(object : ValueEventListener {
                                     override fun onCancelled(p0: DatabaseError) {}

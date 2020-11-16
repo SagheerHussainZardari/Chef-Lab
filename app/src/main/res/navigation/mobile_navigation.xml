@@ -50,6 +50,11 @@
         android:name="com.sagheerhussainzardari.cheflab.Fragments.DishDetailFragment"
         android:label="Dish Detail"
         tools:layout="@layout/fragment_dish_detail" />
+    <fragment
+        android:id="@+id/nav_favDishesFragment"
+        android:name="com.sagheerhussainzardari.cheflab.Fragments.FavDishesFragment"
+        android:label="Favourite Dishes"
+        tools:layout="@layout/fragment_fav_dishes" />
 
 
 </navigation>

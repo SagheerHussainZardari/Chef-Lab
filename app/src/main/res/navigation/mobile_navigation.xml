@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.sagheerhussainzardari.cheflab.Fragments.HomeFragment"
-        android:label="Select Ingredients You Have?"
+        android:label="Select ingredients You Have?"
         tools:layout="@layout/fragment_home" />
 
     <fragment
@@ -43,7 +43,7 @@
     <fragment
         android:id="@+id/nav_scan_ingredents"
         android:name="com.sagheerhussainzardari.cheflab.Fragments.ScanIngredentsFragment"
-        android:label="Scan Ingredents"
+        android:label="Scan ingredients"
         tools:layout="@layout/fragment_scan_ingredents" />
     <fragment
         android:id="@+id/nav_dishDetailFragment"
@@ -55,6 +55,11 @@
         android:name="com.sagheerhussainzardari.cheflab.Fragments.FavDishesFragment"
         android:label="Favourite Dishes"
         tools:layout="@layout/fragment_fav_dishes" />
+    <fragment
+        android:id="@+id/nav_searchDishFragment"
+        android:name="com.sagheerhussainzardari.cheflab.Fragments.SearchDishFragment"
+        android:label="Search Dishes"
+        tools:layout="@layout/fragment_search_dish" />
 
 
 </navigation>

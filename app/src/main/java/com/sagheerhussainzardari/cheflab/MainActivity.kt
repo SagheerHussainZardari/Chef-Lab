@@ -47,7 +47,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_mybooksforseller,
                 R.id.nav_scan_ingredents,
                 R.id.nav_dishDetailFragment,
-                R.id.nav_favDishesFragment
+                R.id.nav_favDishesFragment,
+                R.id.nav_searchDishFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

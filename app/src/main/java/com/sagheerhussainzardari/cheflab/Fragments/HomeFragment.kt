@@ -69,9 +69,6 @@ class HomeFragment : Fragment() {
         tv_ingredentsSelected.text = currentIngredents.size.toString()
     }
 
-    fun onCardClik(dishVideo: String) {
-        context?.toastshort("card clicked")
-    }
 
     private fun setCategoriesSpinner() {
         categoriesList.clear()

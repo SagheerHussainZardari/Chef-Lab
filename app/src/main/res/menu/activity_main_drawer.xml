@@ -15,6 +15,13 @@
             android:iconTint="#000"
             android:title="Scan Ingredents" />
 
+
+        <item
+            android:id="@+id/nav_searchDishFragment"
+            android:icon="@drawable/ic_book"
+            android:iconTint="#000"
+            android:title="Search Dishes" />
+
         <item
             android:id="@+id/nav_favDishesFragment"
             android:icon="@drawable/ic_book"

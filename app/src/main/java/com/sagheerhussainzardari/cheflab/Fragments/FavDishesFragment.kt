@@ -5,13 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.sagheerhussainzardari.cheflab.Adapters.FavDishesAdapter
+import com.sagheerhussainzardari.cheflab.MainActivity
 import com.sagheerhussainzardari.cheflab.Models.DishesModel
 import com.sagheerhussainzardari.cheflab.R
 import com.sagheerhussainzardari.cheflab.toastlong
@@ -75,24 +74,22 @@ class FavDishesFragment : Fragment() {
                                 )
 
                                 if (length.toString() == "0") {
-//                                    context?.toastshort(HomeFragment.currentIngredents.toString())
-
                                     openMatchedDishes()
                                 }
+
                             }
                         })
 
 
                 }
-
             }
         })
 
-
     }
 
-
     private fun openMatchedDishes() {
+
+        context?.toastshort(list.toString())
         dishesListFav.add(
             DishesModel(
                 "sagheer",
@@ -105,12 +102,12 @@ class FavDishesFragment : Fragment() {
             )
         )
 
-//        (activity as MainActivity).openMatchingDishes()
+        (activity as MainActivity).openMatchingDishes()
 
-        rv_favDishes.setHasFixedSize(true)
-        rv_favDishes.layoutManager = GridLayoutManager(context, 1)
-        rv_favDishes.adapter =
-            FavDishesAdapter(requireContext(), list, this)
+//        rv_favDishes.setHasFixedSize(true)
+//        rv_favDishes.layoutManager = GridLayoutManager(context, 1)
+//        rv_favDishes.adapter =
+//            FavDishesAdapter(requireContext(), list, this)
 
     }
 }

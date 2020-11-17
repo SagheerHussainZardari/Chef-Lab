@@ -75,12 +75,13 @@ class LoginActivity : AppCompatActivity() {
         val email = et_EmailLogin.text.toString().trim()
 
         if (email.isEmpty()) {
-            et_EmailLogin.error = "Email Can Not Be Empty!!!"
+            toastshort("Enter Registerd Email Above!!")
             return
         }
 
         if (!(Patterns.EMAIL_ADDRESS.matcher(email).matches())) {
-            et_EmailLogin.error = "Enter A Valid Email Address Please!!!"
+            toastshort("Enter A Valid Email Address Please!!!")
+
             return
         }
 

@@ -148,7 +148,7 @@ class HomeFragment : Fragment() {
 
     private fun setUpRecyclerView(listOfIngredents: ArrayList<IngredentsModel>) {
         recyclerview_list_of_sub_cats.setHasFixedSize(true)
-        recyclerview_list_of_sub_cats.layoutManager = GridLayoutManager(context, 2)
+        recyclerview_list_of_sub_cats.layoutManager = GridLayoutManager(context, 1)
         recyclerview_list_of_sub_cats.adapter =
             ListOfIngredentsAdapter(requireContext(), listOfIngredents, this)
 

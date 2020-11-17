@@ -69,7 +69,7 @@ class ScanIngredentsFragment : Fragment() {
             labelListModel.clear()
             rv_scanedResult
             rv_scanedResult.setHasFixedSize(true)
-            rv_scanedResult.layoutManager = GridLayoutManager(context, 2)
+            rv_scanedResult.layoutManager = GridLayoutManager(context, 1)
             rv_scanedResult.adapter =
                 ListScannedIngredentsAdapter(requireContext(), labelListModel, this)
 
@@ -134,7 +134,7 @@ class ScanIngredentsFragment : Fragment() {
 
                     rv_scanedResult
                     rv_scanedResult.setHasFixedSize(true)
-                    rv_scanedResult.layoutManager = GridLayoutManager(context, 2)
+                    rv_scanedResult.layoutManager = GridLayoutManager(context, 1)
                     rv_scanedResult.adapter =
                         ListScannedIngredentsAdapter(requireContext(), labelListModel, this)
 

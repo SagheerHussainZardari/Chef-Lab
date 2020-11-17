@@ -66,7 +66,7 @@ class ShoppingCartFragment : Fragment() {
     fun setUpRecycler() {
 
         rv_shoppingList.setHasFixedSize(true)
-        rv_shoppingList.layoutManager = GridLayoutManager(context, 2)
+        rv_shoppingList.layoutManager = GridLayoutManager(context, 1)
         rv_shoppingList.adapter =
             ShoppingListAdapter(requireContext(), listOfIngredents, this)
     }

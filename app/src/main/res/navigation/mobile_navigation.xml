@@ -60,6 +60,11 @@
         android:name="com.sagheerhussainzardari.cheflab.Fragments.SearchDishFragment"
         android:label="Search Dishes"
         tools:layout="@layout/fragment_search_dish" />
+    <fragment
+        android:id="@+id/nav_shoppingCartFragment"
+        android:name="com.sagheerhussainzardari.cheflab.Fragments.ShoppingCartFragment"
+        android:label="Shopping Cart"
+        tools:layout="@layout/fragment_shopping_cart" />
 
 
 </navigation>

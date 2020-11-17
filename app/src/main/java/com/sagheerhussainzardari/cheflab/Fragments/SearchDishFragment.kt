@@ -41,6 +41,7 @@ class SearchDishFragment : Fragment() {
                 override fun onCancelled(p0: DatabaseError) {}
 
                 override fun onDataChange(p0: DataSnapshot) {
+                    dishesList.clear()
                     var len = p0.childrenCount
                     for (dish in p0.children) {
                         len -= 1
@@ -102,15 +103,10 @@ class SearchDishFragment : Fragment() {
     }
 
 
-//            filteredList.clear();
-//
-
-
-    //        }
-//    }
     fun onCardClicked(dishItem: DishesModel) {
         MatchingDishesFragment.currentSelectedDish = dishItem
         (activity as MainActivity).openDetailDish()
     }
+
 
 }

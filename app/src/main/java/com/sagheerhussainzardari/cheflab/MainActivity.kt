@@ -48,7 +48,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_scan_ingredents,
                 R.id.nav_dishDetailFragment,
                 R.id.nav_favDishesFragment,
-                R.id.nav_searchDishFragment
+                R.id.nav_searchDishFragment,
+                R.id.nav_shoppingCartFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

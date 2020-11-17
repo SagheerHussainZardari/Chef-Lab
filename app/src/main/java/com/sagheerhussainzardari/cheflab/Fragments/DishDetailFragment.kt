@@ -9,8 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.sagheerhussainzardari.cheflab.R
+import com.sagheerhussainzardari.cheflab.toastshort
 import kotlinx.android.synthetic.main.fragment_dish_detail.*
+
 
 class DishDetailFragment : Fragment() {
 
@@ -40,6 +44,7 @@ class DishDetailFragment : Fragment() {
 
 
         btn_playVideo.setOnClickListener {
+
             if (dishVideo != "" && dishVideo != "null") {
                 val intentBrowser = Intent(
                     Intent.ACTION_VIEW,
@@ -50,6 +55,19 @@ class DishDetailFragment : Fragment() {
                 } catch (ex: ActivityNotFoundException) {
                 }
             }
+        }
+
+        btn_addToCart.setOnClickListener {
+            var items = tv_ingredentsRemaing.text.toString().replace("[", "").replace("]", "")
+            val stringArray: List<String> = items.split(",")
+
+            for (item in stringArray) {
+                FirebaseDatabase.getInstance().getReference("ShoppingIngredents")
+                    .child(FirebaseAuth.getInstance().currentUser?.uid.toString())
+                    .child(item.trim()).setValue(item.trim())
+            }
+
+            context?.toastshort("All Ingredents Added To Your Shopping Cart!!!")
         }
 
         tv_ingredentsAvaiable.text =

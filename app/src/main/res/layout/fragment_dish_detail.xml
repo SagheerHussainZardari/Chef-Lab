@@ -97,7 +97,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_weight="4"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:drawableStart="@drawable/ic_star"

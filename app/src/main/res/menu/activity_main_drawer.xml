@@ -18,13 +18,19 @@
 
         <item
             android:id="@+id/nav_searchDishFragment"
-            android:icon="@drawable/ic_book"
+            android:icon="@drawable/ic_search"
             android:iconTint="#000"
             android:title="Search Dishes" />
 
         <item
+            android:id="@+id/nav_shoppingCartFragment"
+            android:icon="@drawable/ic_cart"
+            android:iconTint="#000"
+            android:title="Your Shopping Cart" />
+
+        <item
             android:id="@+id/nav_favDishesFragment"
-            android:icon="@drawable/ic_book"
+            android:icon="@drawable/ic_star"
             android:iconTint="#000"
             android:title="Favourite Dishes" />
 

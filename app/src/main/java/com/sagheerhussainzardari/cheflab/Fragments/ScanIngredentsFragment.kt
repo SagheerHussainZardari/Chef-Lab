@@ -108,7 +108,7 @@ class ScanIngredentsFragment : Fragment() {
 
             val image = FirebaseVisionImage.fromBitmap(data.extras?.get("data") as Bitmap)
 
-            val labeler = FirebaseVision.getInstance().onDeviceImageLabeler
+            val labeler = FirebaseVision.getInstance().cloudImageLabeler
 
             labeler.processImage(image)
                 .addOnSuccessListener { labels ->

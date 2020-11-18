@@ -38,10 +38,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_scanedResult"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnLayout" />
 
     <LinearLayout
-
+        android:id="@+id/btnLayout"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_above="@+id/btn_ClearList"
@@ -53,6 +54,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="5"
+            android:visibility="visible"
             android:backgroundTint="@color/colorPrimaryDark"
             android:text="Show Results" />
 
@@ -61,6 +63,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="5"
+            android:visibility="visible"
+
             android:text="Scan More" />
 
     </LinearLayout>
@@ -69,6 +73,8 @@
         android:id="@+id/btn_ClearList"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:visibility="visible"
+
         android:layout_alignParentBottom="true"
         android:backgroundTint="#ff0000"
         android:text="Clear List" />

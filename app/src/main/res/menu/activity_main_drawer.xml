@@ -4,10 +4,13 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
+
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_home"
-            android:title="@string/menu_home" />
+            android:id="@+id/nav_firstScreen"
+            android:icon="@drawable/ic_food"
+            android:iconTint="#000"
+            android:title="Home" />
 
         <item
             android:id="@+id/nav_scan_ingredents"
@@ -15,6 +18,10 @@
             android:iconTint="#000"
             android:title="Scan Ingredients" />
 
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_search"
+            android:title="Dish By Ingredients" />
 
         <item
             android:id="@+id/nav_searchDishFragment"

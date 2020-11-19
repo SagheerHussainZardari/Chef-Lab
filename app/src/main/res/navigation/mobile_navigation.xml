@@ -3,68 +3,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_firstScreen">
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.sagheerhussainzardari.cheflab.Fragments.HomeFragment"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.HomeFragment"
         android:label="Select ingredients You Have?"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_sellbook"
-        android:name="com.sagheerhussainzardari.cheflab.Fragments.BookForSellFragment"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.BookForSellFragment"
         android:label="Sell A Book"
         tools:layout="@layout/fragment_sellbook" />
 
     <fragment
         android:id="@+id/nav_editprofile"
-        android:name="com.sagheerhussainzardari.cheflab.Fragments.EditProfileFragment"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.EditProfileFragment"
         android:label="Edit Profile"
         tools:layout="@layout/fragment_editprofile" />
 
 
     <fragment
         android:id="@+id/nav_contactus"
-        android:name="com.sagheerhussainzardari.cheflab.Fragments.ContactUsFragment"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.ContactUsFragment"
         android:label="Contact Us"
         tools:layout="@layout/fragment_contact_us" />
 
     <fragment
         android:id="@+id/nav_logout"
-        android:name="com.sagheerhussainzardari.cheflab.Fragments.LogoutFragment"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.LogoutFragment"
         android:label=""
         tools:layout="@layout/fragment_logout" />
     <fragment
         android:id="@+id/nav_mybooksforseller"
-        android:name="com.sagheerhussainzardari.cheflab.Fragments.MatchingDishesFragment"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.MatchingDishesFragment"
         android:label="Matched Dishes"
         tools:layout="@layout/fragment_matched_dishes" />
     <fragment
         android:id="@+id/nav_scan_ingredents"
-        android:name="com.sagheerhussainzardari.cheflab.Fragments.ScanIngredentsFragment"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.ScanIngredentsFragment"
         android:label="Scan ingredients"
         tools:layout="@layout/fragment_scan_ingredents" />
     <fragment
         android:id="@+id/nav_dishDetailFragment"
-        android:name="com.sagheerhussainzardari.cheflab.Fragments.DishDetailFragment"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.DishDetailFragment"
         android:label="Dish Detail"
         tools:layout="@layout/fragment_dish_detail" />
     <fragment
         android:id="@+id/nav_favDishesFragment"
-        android:name="com.sagheerhussainzardari.cheflab.Fragments.FavDishesFragment"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.FavDishesFragment"
         android:label="Favourite Dishes"
         tools:layout="@layout/fragment_fav_dishes" />
     <fragment
         android:id="@+id/nav_searchDishFragment"
-        android:name="com.sagheerhussainzardari.cheflab.Fragments.SearchDishFragment"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.SearchDishFragment"
         android:label="Search Dishes"
         tools:layout="@layout/fragment_search_dish" />
     <fragment
         android:id="@+id/nav_shoppingCartFragment"
-        android:name="com.sagheerhussainzardari.cheflab.Fragments.ShoppingCartFragment"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.ShoppingCartFragment"
         android:label="Shopping Cart"
         tools:layout="@layout/fragment_shopping_cart" />
+    <fragment
+        android:id="@+id/nav_firstScreen"
+        android:name="com.mahmoodahmedpahnwar.cheflab.Fragments.FirstScreen"
+        android:label="Chef Lab"
+        tools:layout="@layout/fragment_first_screen" />
 
 
 </navigation>

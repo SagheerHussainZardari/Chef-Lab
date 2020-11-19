@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name: Mehmood"
+            android:text="Name: Mahmood Ahmed Panhwar"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
